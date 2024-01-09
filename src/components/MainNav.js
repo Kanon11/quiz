@@ -13,7 +13,7 @@ const MainNav = () => {
         <nav className="navbar navbar-expand-lg">
             <div className="container">
                 <span className="menu" onClick={openNav}><img src="images/menu.png" /></span>
-                <a className="zIndex-1 ml-n5 mr-5" href="index.html#"><img src="images/logo.png" className="d-none d-sm-none d-md-block ml-n5 mr-5" /></a>
+                <a className="zIndex-1 ml-n5 mr-5" href="index.html"><img src="images/logo.png" className="d-none d-sm-none d-md-block ml-n5 mr-5" /></a>
                 <ul className="nav">
                     <li className="nav-item">
                         <a className="nav-link text-white cursor-pointer" data-toggle="modal" data-target="#loginModal" data-whatever="">Login</a>

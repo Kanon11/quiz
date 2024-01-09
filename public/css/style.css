@@ -1,12 +1,7 @@
 
-/* @font-face { font-family: 'Bauhaus Light BT'; font-style: normal; font-weight: normal; src: local('Bauhaus Light BT'), url('../bauhaus-font/bauhauslightbt.woff') format('woff');} */
+@font-face { font-family: 'Bauhaus Light BT'; font-style: normal; font-weight: normal; src: local('Bauhaus Light BT'), url('../bauhaus-font/bauhauslightbt.woff') format('woff');}
 
-@font-face {
-  font-family: 'Bauhaus Light BT';
-  font-style: normal;
-  font-weight: normal;
-  src: url('/bauhauslightbt.woff') format('woff');
-}
+
 :root { 
  --color-purple:#49159b;
  --color-blue: #4799f1;

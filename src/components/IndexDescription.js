@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const IndexDescription = () => {
     return (
@@ -9,7 +10,7 @@ const IndexDescription = () => {
                 <div className="col-lg-5">
                     <h1 className="color-blue mt-5 animated fadeInDown delay-1s">Quiz</h1>
                     <p className="animated fadeInDown delay-2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>
-                    <a href="category.html"><button className="gradientBtn animated fadeInUp delay-3s">Play Quiz</button></a>
+                    <Link to="/category"><button className="gradientBtn animated fadeInUp delay-3s">Play Quiz</button></Link>
                 </div>
                 <div className="col-lg-1"></div>
                 <div className="col-lg-5">
