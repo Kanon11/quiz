@@ -5,7 +5,9 @@ import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage'; // Import your Home Page component
-import  CategoryPage  from "./components/CategoryPage";
+import CategoryPage from "./components/CategoryPage";
+import ProfilePage from './components/ProfilePage';
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/category' element={<CategoryPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
       </Routes>
     </Router>
   );

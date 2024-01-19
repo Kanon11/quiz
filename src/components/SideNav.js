@@ -17,7 +17,7 @@ const SideNav = () => {
             <a href="quiz.html"><i className="fa fa-random text-white mr-3"></i>Random Quiz</a>
             <a href="leaderboard.html"><i className="fa fa-users text-white mr-3"></i>Leaderboard</a>
             <a href="score-history.html"><i className="fa fa-history text-white mr-3"></i>Score History</a>
-            <a href="profile.html"><i className="fa fa-user-o text-white mr-3"></i>My Profile</a>
+            <Link to="/profile"><i className="fa fa-user-o text-white mr-3"></i>My Profile</Link>
             <Link to="/"><i className="fa fa-power-off text-white mr-3"></i>Logout</Link>
         </div>
     );
