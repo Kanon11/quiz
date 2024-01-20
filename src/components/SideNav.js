@@ -14,9 +14,9 @@ const SideNav = () => {
             <a href="index.html" className="text-white text-left"><small><p>henna4@gmail.com</p></small></a>
             <Link to="/category"><i className="fa fa-th-large text-white mr-3"></i>Category</Link>
             <Link to="/category"><i className="fa fa-th-large text-white mr-3"></i>Play Quiz</Link>
-            <a href="quiz.html"><i className="fa fa-random text-white mr-3"></i>Random Quiz</a>
-            <a href="leaderboard.html"><i className="fa fa-users text-white mr-3"></i>Leaderboard</a>
-            <a href="score-history.html"><i className="fa fa-history text-white mr-3"></i>Score History</a>
+            <Link to="quiz"><i className="fa fa-random text-white mr-3"></i>Random Quiz</Link>
+            <Link to="/leaderboard"><i className="fa fa-users text-white mr-3"></i>Leaderboard</Link>
+            <Link to="/score-history"><i className="fa fa-history text-white mr-3"></i>Score History</Link>
             <Link to="/profile"><i className="fa fa-user-o text-white mr-3"></i>My Profile</Link>
             <Link to="/"><i className="fa fa-power-off text-white mr-3"></i>Logout</Link>
         </div>

@@ -42,8 +42,8 @@ $(function () {
     </g>
   </svg>
   <span id="base-timer-label" class="base-timer__label">${formatTime(
-                timeLeft
-                )}</span>
+            timeLeft
+        )}</span>
 </div>
 `;
         startTimer();
@@ -59,8 +59,8 @@ $(function () {
                 timePassed = timePassed += 1;
                 timeLeft = TIME_LIMIT - timePassed;
                 document.getElementById("base-timer-label").innerHTML = formatTime(
-                        timeLeft
-                        );
+                    timeLeft
+                );
                 setCircleDasharray();
                 setRemainingPathColor(timeLeft);
                 //When the question changes, the timer resets.
@@ -82,9 +82,9 @@ $(function () {
                     //When the timer is over, the next question comes and the timer reset.
                     onTimesUp();
                     questionNo++;
-					updateProgress();
+                    updateProgress();
                     if ((questionNo + 1) > q.length) {
-						document.getElementById('quiz_web').innerHTML = "";
+                        document.getElementById('quiz_web').innerHTML = "";
                         // alert("Quiz completed, Now click ok to get your answer");
                         $('label.element-animation').unbind('click');
                         setTimeout(function () {
@@ -109,7 +109,7 @@ $(function () {
                     } else {
                         //reset timer
                         timer();
-                        
+
                         $('#qid').html(questionNo + 1);
                         $('input:radio').prop('checked', false);
                         setTimeout(function () {
@@ -140,21 +140,21 @@ $(function () {
         }
 
         function setRemainingPathColor(timeLeft) {
-            const {alert, warning, info} = COLOR_CODES;
+            const { alert, warning, info } = COLOR_CODES;
             if (timeLeft <= alert.threshold) {
                 document
-                        .getElementById("base-timer-path-remaining")
-                        .classList.remove(warning.color);
+                    .getElementById("base-timer-path-remaining")
+                    .classList.remove(warning.color);
                 document
-                        .getElementById("base-timer-path-remaining")
-                        .classList.add(alert.color);
+                    .getElementById("base-timer-path-remaining")
+                    .classList.add(alert.color);
             } else if (timeLeft <= warning.threshold) {
                 document
-                        .getElementById("base-timer-path-remaining")
-                        .classList.remove(info.color);
+                    .getElementById("base-timer-path-remaining")
+                    .classList.remove(info.color);
                 document
-                        .getElementById("base-timer-path-remaining")
-                        .classList.add(warning.color);
+                    .getElementById("base-timer-path-remaining")
+                    .classList.add(warning.color);
             }
         }
 
@@ -165,34 +165,34 @@ $(function () {
 
         function setCircleDasharray() {
             const circleDasharray = `${(
-                    calculateTimeFraction() * FULL_DASH_ARRAY
-                    ).toFixed(0)} 283`;
+                calculateTimeFraction() * FULL_DASH_ARRAY
+            ).toFixed(0)} 283`;
             document
-                    .getElementById("base-timer-path-remaining")
-                    .setAttribute("stroke-dasharray", circleDasharray);
+                .getElementById("base-timer-path-remaining")
+                .setAttribute("stroke-dasharray", circleDasharray);
         }
     }
     ;
     var loading = $('#loadbar').hide();
     $(document)
-            .ajaxStart(function () {
-                loading.show();
-            }).ajaxStop(function () {
-        loading.hide();
-    });
+        .ajaxStart(function () {
+            loading.show();
+        }).ajaxStop(function () {
+            loading.hide();
+        });
     var questionNo = 0;
     var correctCount = 0;
     var check_click = 0;
     var q = [
-        {'Q': 'Which is National game of India?', 'A': 2, 'C': ['Cricket;', 'Hockey;', 'Football', 'Kabaddi']},
-        {'Q': 'Who was first individual Olympic medal winner from independent India?', 'A': 3, 'C': ['Pradip Bode', 'Harihar Banerjee', 'KD Jadav', 'Milkha Singh']},
-        {'Q': 'In which stadium Sachin Tendulkar completed his 100th century?', 'A': 1, 'C': ['Shere Bangla stadium', 'Eden Garden', 'Firoz shah Kotla Stadium', 'None of the above']},
-        {'Q': 'Who is the first Indian woman to win as Asian Games gold in 4oom run?', 'A': 2, 'C': ['M.L. Valsamma', 'Kamaljit Sandhu', 'PT Usha', 'K Malleshwari']},
-        {'Q': 'Who was indian first football caption?', 'A': 3, 'C': ['P K Banerjee', 'Shailen Manna', 'Talimeren Ao', 'SC Goswami']}
+        { 'Q': 'Which is National game of India?', 'A': 2, 'C': ['Cricket;', 'Hockey;', 'Football', 'Kabaddi'] },
+        { 'Q': 'Who was first individual Olympic medal winner from independent India?', 'A': 3, 'C': ['Pradip Bode', 'Harihar Banerjee', 'KD Jadav', 'Milkha Singh'] },
+        { 'Q': 'In which stadium Sachin Tendulkar completed his 100th century?', 'A': 1, 'C': ['Shere Bangla stadium', 'Eden Garden', 'Firoz shah Kotla Stadium', 'None of the above'] },
+        { 'Q': 'Who is the first Indian woman to win as Asian Games gold in 4oom run?', 'A': 2, 'C': ['M.L. Valsamma', 'Kamaljit Sandhu', 'PT Usha', 'K Malleshwari'] },
+        { 'Q': 'Who was indian first football caption?', 'A': 3, 'C': ['P K Banerjee', 'Shailen Manna', 'Talimeren Ao', 'SC Goswami'] }
 
     ];
-	//Progress Bar
-	var progress, progressPercentage; // progress bar
+    //Progress Bar
+    var progress, progressPercentage; // progress bar
 
     progress = document.getElementsByClassName('progress-bar')[0];
 
@@ -211,16 +211,15 @@ $(function () {
             parent.prepend("<span class='ink'></span>");
         ink = parent.find(".ink");
         ink.removeClass("animate");
-        if (!ink.height() && !ink.width())
-        {
+        if (!ink.height() && !ink.width()) {
             d = Math.max(parent.outerWidth(), parent.outerHeight());
-            ink.css({height: "100px", width: "45%"});
+            ink.css({ height: "100px", width: "45%" });
             // ink.css({border-radius:"8px"});
         }
 
         x = e.pageX - parent.offset().left - ink.width() / 2;
         y = e.pageY - parent.offset().top - ink.height() / 2;
-        ink.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+        ink.css({ top: y + 'px', left: x + 'px' }).addClass("animate");
         //ripple end
 
         var choice = $(this).parent().find('input:radio').val();
@@ -239,10 +238,10 @@ $(function () {
             $('#loadbar').show();
             $('#quiz').fadeOut();
             questionNo++;
-			updateProgress();
+            updateProgress();
             // stop timer here
             if ((questionNo + 1) > q.length) {
-				document.getElementById('quiz_web').innerHTML = "";
+                document.getElementById('quiz_web').innerHTML = "";
                 // alert("Quiz completed, Now click ok to get your answer");
                 $('label.element-animation').unbind('click');
                 setTimeout(function () {
@@ -287,56 +286,56 @@ $(function () {
         else
             return true;
     };
-// chartMake();
+    // chartMake();
     function chartMake() {
 
         var chart = AmCharts.makeChart("chartdiv",
-                {
-                    "type": "serial",
-                    "theme": "dark",
-                    "dataProvider": [{
-                            "name": "Correct",
-                            "points": correctCount,
-                            "color": "#00FF00",
-                            "bullet": "http://i2.wp.com/img2.wikia.nocookie.net/__cb20131006005440/strategy-empires/images/8/8e/Check_mark_green.png?w=250"
-                        }, {
-                            "name": "Incorrect",
-                            "points": q.length - correctCount,
-                            "color": "red",
-                            "bullet": "http://4vector.com/i/free-vector-x-wrong-cross-no-clip-art_103115_X_Wrong_Cross_No_clip_art_medium.png"
-                        }],
-                    "valueAxes": [{
-                            "maximum": q.length,
-                            "minimum": 0,
-                            "axisAlpha": 0,
-                            "dashLength": 4,
-                            "position": "left"
-                        }],
-                    "startDuration": 1,
-                    "graphs": [{
-                            "balloonText": "<span style='font-size:13px;'>[[category]]: <b>[[value]]</b></span>",
-                            "bulletOffset": 10,
-                            "bulletSize": 52,
-                            "colorField": "color",
-                            "cornerRadiusTop": 8,
-                            "customBulletField": "bullet",
-                            "fillAlphas": 0.8,
-                            "lineAlpha": 0,
-                            "type": "column",
-                            "valueField": "points"
-                        }],
-                    "marginTop": 0,
-                    "marginRight": 0,
-                    "marginLeft": 0,
-                    "marginBottom": 0,
-                    "autoMargins": false,
-                    "categoryField": "name",
-                    "categoryAxis": {
-                        "axisAlpha": 0,
-                        "gridAlpha": 0,
-                        "inside": true,
-                        "tickLength": 0
-                    }
-                });
+            {
+                "type": "serial",
+                "theme": "dark",
+                "dataProvider": [{
+                    "name": "Correct",
+                    "points": correctCount,
+                    "color": "#00FF00",
+                    "bullet": "http://i2.wp.com/img2.wikia.nocookie.net/__cb20131006005440/strategy-empires/images/8/8e/Check_mark_green.png?w=250"
+                }, {
+                    "name": "Incorrect",
+                    "points": q.length - correctCount,
+                    "color": "red",
+                    "bullet": "http://4vector.com/i/free-vector-x-wrong-cross-no-clip-art_103115_X_Wrong_Cross_No_clip_art_medium.png"
+                }],
+                "valueAxes": [{
+                    "maximum": q.length,
+                    "minimum": 0,
+                    "axisAlpha": 0,
+                    "dashLength": 4,
+                    "position": "left"
+                }],
+                "startDuration": 1,
+                "graphs": [{
+                    "balloonText": "<span style='font-size:13px;'>[[category]]: <b>[[value]]</b></span>",
+                    "bulletOffset": 10,
+                    "bulletSize": 52,
+                    "colorField": "color",
+                    "cornerRadiusTop": 8,
+                    "customBulletField": "bullet",
+                    "fillAlphas": 0.8,
+                    "lineAlpha": 0,
+                    "type": "column",
+                    "valueField": "points"
+                }],
+                "marginTop": 0,
+                "marginRight": 0,
+                "marginLeft": 0,
+                "marginBottom": 0,
+                "autoMargins": false,
+                "categoryField": "name",
+                "categoryAxis": {
+                    "axisAlpha": 0,
+                    "gridAlpha": 0,
+                    "inside": true,
+                    "tickLength": 0
+                }
+            });
     }
 });

@@ -9,7 +9,7 @@ import Footer from './Footer'
       <div className='home-bg light-bg mb-5'>
           <Back />
           <CategoryContent />
-          {/* <SubCategoryContent /> */}
+          <SubCategoryContent />
           <Footer/>
       </div>
   )
